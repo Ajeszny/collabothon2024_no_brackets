@@ -1,0 +1,51 @@
+.WidgetTemplate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #608081;
+  border-radius: 16px;
+  color: black;
+  /*
+  -webkit-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+  -moz-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+  box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+  */
+}
+
+.WidgetHeader {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  width: calc(100% - 40px);
+  border-bottom: 1px solid black;
+}
+
+.WidgetHeaderIcon {
+  margin-right: 4%;
+}
+
+.WidgetHeaderTitle {
+  margin-left: 4%;
+}
+
+.WidgetCloseButton {
+  display: float;
+  position: relative;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  top: 1%;
+  right: -43%;
+}
+
+.WidgetCloseButtonIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: background 0.5s;
+}
+
+.WidgetCloseButtonIcon:hover {
+  background-color: #4a4a4a;
+}
