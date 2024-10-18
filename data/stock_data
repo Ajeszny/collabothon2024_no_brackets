@@ -1,0 +1,122 @@
+[
+    {
+        "symbol": "VTAK",
+        "company_name": "Catheter Precision, Inc.",
+        "price": 1.17,
+        "changes_percentage": 165.4867
+    },
+    {
+        "symbol": "DRUG",
+        "company_name": "Bright Minds Biosciences Inc.",
+        "price": 50.64,
+        "changes_percentage": 133.364
+    },
+    {
+        "symbol": "PEGY",
+        "company_name": "Pineapple Energy Inc.",
+        "price": 10.0699,
+        "changes_percentage": 82.3071
+    },
+    {
+        "symbol": "ATNF",
+        "company_name": "180 Life Sciences Corp.",
+        "price": 6.76,
+        "changes_percentage": 56.1201
+    },
+    {
+        "symbol": "HEPS",
+        "company_name": "D-Market Elektronik Hizmetler ve Ticaret A.S.",
+        "price": 3.3099,
+        "changes_percentage": 50.4615
+    },
+    {
+        "symbol": "SOBR",
+        "company_name": "SOBR Safe, Inc.",
+        "price": 11.86,
+        "changes_percentage": 49.1824
+    },
+    {
+        "symbol": "TVGN",
+        "company_name": "Tevogen Bio Holdings Inc.",
+        "price": 1.975,
+        "changes_percentage": 43.1159
+    },
+    {
+        "symbol": "QNRX",
+        "company_name": "Quoin Pharmaceuticals, Ltd.",
+        "price": 0.9181,
+        "changes_percentage": 39.1061
+    },
+    {
+        "symbol": "INHD",
+        "company_name": "Inno Holdings Inc. Common Stock",
+        "price": 5.5665,
+        "changes_percentage": 35.1092
+    },
+    {
+        "symbol": "BAER",
+        "company_name": "Bridger Aerospace Group Holdings, Inc. Common Stock",
+        "price": 3.09,
+        "changes_percentage": 33.1897
+    },
+    {
+        "symbol": "AIFF",
+        "company_name": "Firefly Neuroscience Inc.",
+        "price": 3.6266,
+        "changes_percentage": 27.6972
+    },
+    {
+        "symbol": "MHUA",
+        "company_name": "Meihua International Medical Technologies Co., Ltd.",
+        "price": 1.1195,
+        "changes_percentage": 24.4719
+    },
+    {
+        "symbol": "BSGM",
+        "company_name": "BioSig Technologies, Inc.",
+        "price": 0.385,
+        "changes_percentage": 24.1935
+    },
+    {
+        "symbol": "RGTI",
+        "company_name": "Rigetti Computing, Inc.",
+        "price": 1.1799,
+        "changes_percentage": 24.1049
+    },
+    {
+        "symbol": "SLRX",
+        "company_name": "Salarius Pharmaceuticals, Inc.",
+        "price": 2.2807,
+        "changes_percentage": 23.2171
+    },
+    {
+        "symbol": "OCG",
+        "company_name": "Oriental Culture Holding LTD",
+        "price": 1.39,
+        "changes_percentage": 22.807
+    },
+    {
+        "symbol": "NRGV",
+        "company_name": "Energy Vault Holdings, Inc.",
+        "price": 1.5199,
+        "changes_percentage": 22.7542
+    },
+    {
+        "symbol": "KDLY",
+        "company_name": "Kindly MD, Inc.",
+        "price": 1.49,
+        "changes_percentage": 22.1311
+    },
+    {
+        "symbol": "JTAI",
+        "company_name": "Jet.AI Inc.",
+        "price": 0.1181,
+        "changes_percentage": 21.8557
+    },
+    {
+        "symbol": "JDZG",
+        "company_name": "JIADE LIMITED Common stock",
+        "price": 2.0699,
+        "changes_percentage": 21.7575
+    }
+]
