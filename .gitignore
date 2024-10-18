@@ -1,7 +1,26 @@
-### Example user template template
-### Example user template
-
-# IntelliJ project files
 .idea
 *.iml
 api_keys.py
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
