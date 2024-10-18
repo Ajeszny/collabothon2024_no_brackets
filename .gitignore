@@ -1,6 +1,6 @@
 .idea
 *.iml
-api_keys.py
+backend/api_keys.py
 .DS_*
 *.log
 logs
