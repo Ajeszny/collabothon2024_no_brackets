@@ -1,8 +1,12 @@
-from backend.data_api import *
-from backend.plot_data import visualize_data
-from backend.process_data import analyze_stock_data
+from backend.plot_data import plot_donut_chart_plotly, plot_transaction_history_plotly
+from backend.process_data import calculate_final_balances
+from backend.synthetic_data import create_synthetic_card_data
 
 if __name__ == '__main__':
-    df_stock = get_historical_data('AAPL', 7)
-    df_stock_analyzed = analyze_stock_data(df_stock)
-    visualize_data(df_stock_analyzed)
+    card_data, transactions_data = create_synthetic_card_data()
+    print(card_data)
+    print(transactions_data.head())
+    updated_card_data = calculate_final_balances(card_data, transactions_data)
+    print(updated_card_data)
+    plot_donut_chart_plotly(updated_card_data)
+    plot_transaction_history_plotly(transactions_data)
