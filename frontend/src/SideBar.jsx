@@ -3,6 +3,7 @@ function SideBar({
   TransactionsSettings,
   FinancialOverviewSettings,
   TasksSettings,
+  InvestmentPropositionsSettings,
 }) {
   const handleToggle = ({ isHidden, setIsHidden, wasPressed, setWasPressed }) => {
     if (isHidden) {
@@ -46,6 +47,13 @@ function SideBar({
       onClick={() => handleToggle(TasksSettings)}
       >
         <img src="images/TasksIcon.png" />
+      </div>
+      <div
+      style={ {background: InvestmentPropositionsSettings.isHidden ? "#1f322e" : "rgba(62,172,145,175)"}}
+      className="VisibilityToggle"
+      onClick={() => handleToggle(InvestmentPropositionsSettings)}
+      >
+        <img src="images/InvestmentPropositionsIcon.png" />
       </div>
     </div>
   )
