@@ -1,4 +1,5 @@
 import React from 'react';
+import FinancialOverview from './Widgets/FinancialOverview/FinancialOverview';
 import Mail from './Widgets/Mail/Mail';
 
 function WidgetsContainer({ isOpen }) {
@@ -8,6 +9,7 @@ function WidgetsContainer({ isOpen }) {
     className="WidgetsContainer"
     >
       <Mail />
+      <FinancialOverview />
     </div>
   )
 }

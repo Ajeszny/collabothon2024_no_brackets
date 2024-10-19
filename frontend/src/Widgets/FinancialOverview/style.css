@@ -1,7 +1,6 @@
-.Mail {
+.FinancialOverview {
   display: flex;
-  width: 300px;
-  padding: 0 0 10px 0;
+  width: 600px;
   flex-direction: column;
   align-items: start;
   justify-content: start;
@@ -13,23 +12,15 @@
   box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
 }
 
-.MailRow {
+.FinancialOverviewContent {
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 0;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
+  align-content: center;
 }
 
-.MailRowIcon {
-  width: 8px;
-  height: 8px;
-  margin-right: 20px;
-}
-
-.MailRowContent {
-  display: flex;
-  width: calc(100% - 8px);
-  border-bottom: 1px solid black;
-  text-align: center;
+.FinancialOverviewChart {
+  border-right: 1px solid black;
 }
