@@ -1,7 +1,7 @@
 .InvestmentPropositions {
   display: flex;
-  width: 300px;
-  padding: 10px;
+  width: 320px;
+  padding: 10px 0;
   flex-direction: column;
   background-color: #608081; 
   border-radius: 16px; 
@@ -10,29 +10,10 @@
   transition: opacity 0.5s;
 }
 
-.Header {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  width: 100%;
-  justify-content: space-between; /* Align icon and close button */
-}
-
-.HeaderIcon {
-  width: 24px; 
-  height: 24px; 
-  margin-right: 10px;
-}
-
-.HeaderTitle {
-  font-size: 1.5em; 
-  font-weight: bold;
-  flex-grow: 1; 
-}
-
 .InvestmentContent {
-  width: 100%;
+  width: calc(100% - 20px);
   display: flex;
+  padding: 0 10px;
   flex-direction: column;
 }
 
