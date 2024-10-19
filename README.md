@@ -1,1 +1,1 @@
-# Colaborathon 💸💸💸💸💸💸
+# Collabothon 💸💸💸💸💸💸
