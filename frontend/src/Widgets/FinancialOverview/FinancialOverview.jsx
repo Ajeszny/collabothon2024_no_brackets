@@ -36,7 +36,7 @@ function FinancialOverview({
 
   useEffect(() => {
     handleFetch();
-  }, []);
+  }, [isHidden]);
 
   if (loading) {
     return (
