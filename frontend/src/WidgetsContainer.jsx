@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FinancialOverview from './Widgets/FinancialOverview/FinancialOverview';
 import Mail from './Widgets/Mail/Mail';
 import Transactions from './Widgets/Transactions/Transactions';
 import Tasks from './Widgets/Tasks/Tasks';
 import InvestmentPropositions from './Widgets/InvestmentPropositions/InvestmentPropositions';
 import Grid from 'react-easy-grid-dnd'
+import CurrencyConverter from './Widgets/CurrencyConverter/CurrencyConverter';
+
 
 
 function WidgetsContainer({
@@ -12,7 +14,8 @@ function WidgetsContainer({
   TransactionsSettings,
   FinancialOverviewSettings,
   TasksSettings,
-  InvestmentPropositionsSettings
+  InvestmentPropositionsSettings,
+  CurrencyConverterSettings,
 }) {
   return (
     <div className="WidgetsContainer">
@@ -46,6 +49,13 @@ function WidgetsContainer({
       setIsHidden={InvestmentPropositionsSettings.setIsHidden}
       wasPressed={InvestmentPropositionsSettings.wasPressed}
       setWasPressed={InvestmentPropositionsSettings.setWasPressed}
+      />
+      
+      <CurrencyConverter
+      isHidden={CurrencyConverterSettings.isHidden}
+      setIsHidden={CurrencyConverterSettings.setIsHidden}
+      wasPressed={CurrencyConverterSettings.wasPressed}
+      setWasPressed={CurrencyConverterSettings.setWasPressed}
       />
     </div>
   )
