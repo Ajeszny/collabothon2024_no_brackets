@@ -1,30 +1,41 @@
-/* Calendar view styles */
 .CalendarView {
-    padding: 20px;
+    padding: 0px;
   }
   
   .CalendarGrid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7 days in a week */
-    grid-gap: 10px;
+  grid-template-columns: repeat(7, 1fr); 
+  grid-gap: 3px;
+  width: 100%; 
+  max-width: 280px;
+  margin: 0 auto;
   }
   
   .CalendarDay {
     display: flex;
+    width: 23px;
+    height: 23px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
-    height: 50px; /* Adjust for your design */
-    position: relative;
+    border: 1px solid #333; 
+    aspect-ratio: 1 / 1; 
+    border-radius: 5px;
+    background-color: #f5f5f5; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    padding: 5px; 
   }
   
   .CalendarIcon {
     width: 12px;
     height: 12px;
-    margin-top: 5px;
+    margin-top: 2px;
   }
   
+  .CalendarDay:hover {
+    background-color: #e0e0e0; 
+  }
+
   .SwitchViewButton {
     background: none;
     border: none;

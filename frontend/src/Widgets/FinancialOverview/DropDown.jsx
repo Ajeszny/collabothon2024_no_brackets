@@ -1,10 +1,11 @@
 import React from 'react';
 
-function DropDown({ selectedCurrency, setSelectedCurrency }) {
+function DropDown({ selectedCurrency, setSelectedCurrency, handleFetch }) {
   const currencies = ['EUR', 'USD', 'PLN', 'UAH'];
 
   const handleChange = (event) => {
     setSelectedCurrency(event.target.value);
+    handleFetch();
   };
 
   return (
