@@ -3,12 +3,9 @@ import FinancialOverview from './Widgets/FinancialOverview/FinancialOverview';
 import Mail from './Widgets/Mail/Mail';
 import Transactions from './Widgets/Transactions/Transactions';
 
-function WidgetsContainer({ isOpen }) {
+function WidgetsContainer() {
   return (
-    <div
-    style={{ width: isOpen ? "90%" : "95%" }}
-    className="WidgetsContainer"
-    >
+    <div className="WidgetsContainer">
       <Mail />
       <FinancialOverview />
       <Transactions />

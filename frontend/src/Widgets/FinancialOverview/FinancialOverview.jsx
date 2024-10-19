@@ -6,9 +6,12 @@ import InteractivePieChart from './Chart';
 import BarChart from './BarChart'
 import DropDown from './DropDown';
 
-function FinancialOverview() {
-  const [isHidden, setIsHidden] = useState(false);
-  const [wasPressed, setWasPressed] = useState(false);
+function FinancialOverview({
+  isHidden,
+  setIsHidden,
+  wasPressed,
+  setWasPressed
+}) {
   const [selectedCurrency, setSelectedCurrency] = useState('EUR');
 
   return (

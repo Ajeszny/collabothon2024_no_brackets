@@ -35,34 +35,17 @@
   font-weight: bold;
 }
 
-.SideBar {
-  background-color: #CBCBCB;
-  padding: 20px;
-  height: calc(100% - 40px);
-  transition: width 0.5s;
-}
-
 .WidgetsContainer {
   padding: 20px 0;
   height: calc(100% - 40px);
   background-color: rgba(100, 100, 100, 0.3);
+  width: calc(100% - 64px);
   transition: width 0.5s;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   color: white;
-}
-
-.SideBarOpenButton, .SideBarCloseButton {
-  cursor: pointer;
-  margin-left: calc(100% - 32px);
-  border-radius: 50%;
-  transition: background 0.5s;
-}
-
-.SideBarOpenButton:hover, .SideBarCloseButton:hover {
-  background-color: gray;
 }
 
 .DummyWidget {
@@ -75,4 +58,33 @@
   -webkit-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 1);
   -moz-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 1);
   box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 1);
+}
+
+.SideBar {
+  margin: 0 20px;
+  height: 100%;
+  border-radius: 56px;
+  background: #1f322e;
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.VisibilityToggle {
+  border-radius: 50%;
+  width: 63px;
+  height: 63px;
+  background-color: #1f322e;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+.VisibilityToggle:hover {
+  background: rgba(62,172,145,175);
 }
