@@ -27,5 +27,6 @@ urlpatterns = [
     path("add_email/", add_email),
     path("get_email/", get_emails),
     path("get_transactions/", get_transactions),
-    path("add_transaction/", add_transaction)
+    path("add_transaction/", add_transaction),
+    path("get_balance/", get_account_balance)
 ]

@@ -1,19 +1,34 @@
 import React, { useState } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
-const data = [
-  { name: "Trochę tu", value: 800 },
-  { name: "trochę tam", value: 300 },
-  { name: "800+", value: 300 },
-  { name: "mops", value: 200 },
-  { name: "fein", value: 300 },
-  { name: "fraud", value: 200 },
-];
+//const data = [
+ // { name: "Trochę tu", value: 800 },
+ // { name: "trochę tam", value: 300 },
+ // { name: "800+", value: 300 },
+ // { name: "mops", value: 200 },
+ // { name: "fein", value: 300 },
+ // { name: "fraud", value: 200 },
+//];
 
 const COLORS = ["#333d39", "#355046", "#3d7a64", "#37a57d", "#23d191", "#80BEA5"];
 
 const InteractivePieChart = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch("http://localhost:8000/get_balance?currency=EUR", {method: "GET"});
+      const json = await data.json();
+      setTransactions(json);
+      //console.log({ json });
+    };
+
+    fetchData()
+      .catch(err => {
+        console.error({ err });
+      });
+  }, []);
 
   const onPieEnter = (_, index) => {
     setActiveIndex(index);
