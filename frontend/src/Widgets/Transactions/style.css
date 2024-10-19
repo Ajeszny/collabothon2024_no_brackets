@@ -1,0 +1,77 @@
+.TransactionWidget {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 0 0 10px;
+    background-color: #608081;
+    border-radius: 16px;
+    color: black;
+    -webkit-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+    -moz-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+    box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+  }
+  
+  .Header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px; /* Add padding for consistent spacing */
+    margin-bottom: 10px;
+  }
+  
+  .HeaderIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  .HeaderTitle {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+  }
+  
+  .TransactionsContent {
+    padding: 0 20px; /* Added padding for content alignment */
+    margin-top: 10px;
+  }
+  
+  .Transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensures vertical centering of elements */
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+  }
+  
+  .TransactionDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Description {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .Account {
+    font-size: 12px;
+    color: rgba(42, 47, 47, 1);
+  }
+  
+  .Amount {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    margin-left: auto; /* Pushes amount to the right side */
+  }
+  
+  .Amount.positive {
+    color: rgba(42, 47, 47, 1);
+  }
+  
+  .Amount.negative {
+    color: rgba(119, 46, 46, 1);
+  }
+  

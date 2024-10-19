@@ -67,5 +67,63 @@ def calculate_final_balances(card_data, transactions_data):
     return card_data
 
 
+def calculate_roi(stock_data):
+    roi_data = []
+
+    for stock, df in stock_data.items():
+        # Group data by month
+        df['month'] = df['date'].dt.to_period('M')
+        monthly_data = df.groupby('month').agg({
+            'price': ['first', 'last']
+        }).reset_index()
+
+        monthly_data.columns = ['month', 'start_price', 'end_price']
+        monthly_data['roi'] = (monthly_data['end_price'] - monthly_data['start_price']) / monthly_data[
+            'start_price'] * 100
+
+        for _, row in monthly_data.iterrows():
+            roi_data.append({
+                'stock': stock,
+                'month': str(row['month']),
+                'start_price': row['start_price'],
+                'end_price': row['end_price'],
+                'roi': row['roi']
+            })
+
+    return pd.DataFrame(roi_data)
+
+
+def calculate_card_balance_and_transaction_type_summary(card_data, transactions_df):
+    # Create an empty list to store the results
+    result = []
+
+    # Loop through each card
+    for card in card_data['Card']:
+        # Filter transactions for the current card
+        card_transactions = transactions_df[transactions_df['Card'] == card]
+
+        # Calculate total balance by summing up the transactions
+        total_balance = card_data[card_data['Card'] == card]['Starting_Balance'].values[0] + card_transactions['Transaction_Amount'].sum()
+
+        # Group the transactions by type and calculate sums for money spent (negative) and earned (positive)
+        transaction_summary = card_transactions.groupby('Transaction_Type')['Transaction_Amount'].agg(
+            total_spent=lambda x: x[x < 0].sum(),  # Sum of negative values (money spent)
+            total_earned=lambda x: x[x > 0].sum()  # Sum of positive values (money earned)
+        ).reset_index()
+
+        # Fill NaN values with 0 (in case there were no positive or negative transactions for some types)
+        transaction_summary['total_spent'].fillna(0, inplace=True)
+        transaction_summary['total_earned'].fillna(0, inplace=True)
+
+        # Add the card and balance information
+        summary = {
+            'Card': card,
+            'Starting_Balance': card_data[card_data['Card'] == card]['Starting_Balance'].values[0],
+            'Current_Balance': total_balance,
+            'Transaction_Summary': transaction_summary
+        }
+        result.append(summary)
+
+    return result
 
 
