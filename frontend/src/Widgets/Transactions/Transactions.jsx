@@ -1,11 +1,14 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import './style.css'; // Your existing styles
-import '../style.css'; // Your existing styles
+import React, { useEffect, useState } from 'react';
+import './style.css';
+import '../style.css';
 import WidgetCloseButton from '../WidgetCloseButton';
 
-function Transactions() {
-  const [isHidden, setIsHidden] = useState(false);
-  const [wasPressed, setWasPressed] = useState(false);
+function Transactions({
+  isHidden,
+  setIsHidden,
+  wasPressed,
+  setWasPressed
+}) {
   const [transactions, setTransactions] = useState([])
 
 
@@ -14,7 +17,6 @@ function Transactions() {
       const data = await fetch("http://localhost:8000/get_transactions", {method: "GET"});
       const json = await data.json();
       setTransactions(json);
-      //console.log({ json });
     };
 
     fetchData()
@@ -26,10 +28,12 @@ function Transactions() {
 
   return (
     isHidden ? null : (
-      <div style={wasPressed ? { opacity: 0 } : {}} className="TransactionWidget">
+      <div
+      style={ wasPressed ? { opacity: 0 } : { opacity: 1 } }
+      className="TransactionWidget">
         <WidgetCloseButton setIsHidden={setIsHidden} setWasPressed={setWasPressed} />
         <div className="Header">
-          <img className="HeaderIcon" src="images/TransactionIcon.png" alt="Transaction Icon" />
+          <img className="HeaderIcon" src="images/TransactionsIcon.png" alt="Transaction Icon" />
           <p className="HeaderTitle">Transactions</p>
         </div>
         <div className="TransactionsContent">
