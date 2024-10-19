@@ -1,0 +1,53 @@
+.FinancialOverview {
+  display: flex;
+  width: 680px;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  background-color: #608081;
+  border-radius: 16px;
+  color: black;
+  -webkit-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+  -moz-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+  box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+  transition: opacity 0.5s;
+}
+
+.FinancialOverviewContent {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.FinancialOverviewChart {
+  border-right: 1px solid black;
+}
+
+.DropDown {
+  position: relative;
+  top: -4px;
+  right: -360px;
+}
+
+.DropDownMenu {
+  font-size: 14px;
+  padding: 1px 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+  cursor: pointer;
+}
+
+.DropDown::after {
+  content: '▼';
+  font-size: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}

@@ -95,3 +95,33 @@ def plot_transaction_history_plotly(transactions_data):
     fig.update_layout(xaxis_title='Date', yaxis_title='Balance (€)', hovermode='x unified')
     fig.show()
 
+def plot_transactions_table(transactions_df):
+    fig = go.Figure(data=[go.Table(
+        header=dict(values=list(transactions_df.columns),
+                    fill_color='paleturquoise',
+                    align='left'),
+        cells=dict(values=[transactions_df[col] for col in transactions_df.columns],
+                   fill_color=[['lightgray'] * len(transactions_df['Date'])],
+                   font=dict(color=[['green' if float(x.split()[0]) > 0 else 'red' for x in transactions_df['Amount']]]))
+    )])
+
+    fig.update_layout(title_text="Transactions Table")
+    fig.show()
+
+
+def plot_mail_table(mail_df):
+    # Map colors based on category
+    category_colors = {'Alert': 'red', 'Warning': 'orange', 'Info': 'green'}
+
+    fig = go.Figure(data=[go.Table(
+        header=dict(values=list(mail_df.columns),
+                    fill_color='lightblue',
+                    align='left'),
+        cells=dict(values=[mail_df[col] for col in mail_df.columns],
+                   fill_color=[['lightgray'] * len(mail_df['Date'])],
+                   font=dict(color=[category_colors.get(cat, 'black') for cat in mail_df['Category']])
+        )
+    )])
+
+    fig.update_layout(title_text="Email Notifications Table")
+    fig.show()

@@ -1,34 +1,40 @@
-import React, { useState } from 'react'; 
-import './style.css'; // Your existing styles
-import '../style.css'; // Your existing styles
+import React, { useEffect, useState } from 'react';
+import './style.css';
+import '../style.css';
 import WidgetCloseButton from '../WidgetCloseButton';
 
-function Transactions() {
-  const [isHidden, setIsHidden] = useState(false);
-  const [wasPressed, setWasPressed] = useState(false);
+function Transactions({
+  isHidden,
+  setIsHidden,
+  wasPressed,
+  setWasPressed
+}) {
+  const [transactions, setTransactions] = useState([])
 
-  const transactions = [
-    { description: "kupno czegos tam", account: "account: **** 1111", amount: "-7590.0", currency: "eur", positive: false },
-    { description: "odsetki", account: "account: **** 2222", amount: "+10.0", currency: "usd", positive: true },
-    { description: "prewalutowanie", account: "account: **** 1111", amount: "-12.0", currency: "usd", positive: false },
-    { description: "lorem ipsum", account: "account: **** 2222", amount: "+10.0", currency: "usd", positive: true },
-    { description: "lorem ipsum", account: "account: **** 2222", amount: "+10.0", currency: "usd", positive: true }
-  ];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch("http://localhost:8000/get_transactions", {method: "GET"});
+      const json = await data.json();
+      setTransactions(json);
+    };
+
+    fetchData()
+      .catch(err => {
+        console.error({ err });
+      });
+  }, []);
+
 
   return (
     isHidden ? null : (
-      <div style={wasPressed ? { background: "gray" } : {}} className="TransactionWidget">
+      <div
+      style={ wasPressed ? { opacity: 0 } : { opacity: 1 } }
+      className="TransactionWidget">
         <WidgetCloseButton setIsHidden={setIsHidden} setWasPressed={setWasPressed} />
         <div className="Header">
-          <a 
-            href="https://www.commerzbank.de/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            style={{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center' }} 
-          >
-            <img className="HeaderIcon" src="images/TransactionIcon.png" alt="Transaction Icon" />
-            <p className="HeaderTitle" style={{ marginLeft: '8px' }}>Transactions</p> {}
-          </a>
+          <img className="HeaderIcon" src="images/TransactionsIcon.png" alt="Transaction Icon" />
+          <p className="HeaderTitle">Transactions</p>
         </div>
         <div className="TransactionsContent">
           {transactions.map((transaction, index) => (
