@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FinancialOverview from './Widgets/FinancialOverview/FinancialOverview';
 import Mail from './Widgets/Mail/Mail';
 import Transactions from './Widgets/Transactions/Transactions';
