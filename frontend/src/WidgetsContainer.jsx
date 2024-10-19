@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FinancialOverview from './Widgets/FinancialOverview/FinancialOverview';
 import Mail from './Widgets/Mail/Mail';
 import Transactions from './Widgets/Transactions/Transactions';
 import Tasks from './Widgets/Tasks/Tasks';
 import InvestmentPropositions from './Widgets/InvestmentPropositions/InvestmentPropositions';
+import Grid from 'react-easy-grid-dnd'
 import CurrencyConverter from './Widgets/CurrencyConverter/CurrencyConverter';
 
 
@@ -18,6 +19,7 @@ function WidgetsContainer({
 }) {
   return (
     <div className="WidgetsContainer">
+
       <Mail 
       isHidden={MailSettings.isHidden}
       setIsHidden={MailSettings.setIsHidden}

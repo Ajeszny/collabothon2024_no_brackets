@@ -25,4 +25,5 @@ db.sqlite3
 db.sqlite3-journal
 media
 
+*/.linux_venv/
 */.venv/
