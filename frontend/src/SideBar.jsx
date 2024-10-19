@@ -4,6 +4,7 @@ function SideBar({
   FinancialOverviewSettings,
   TasksSettings,
   InvestmentPropositionsSettings,
+  CurrencyConverterSettings,
 }) {
   const handleToggle = ({ isHidden, setIsHidden, wasPressed, setWasPressed }) => {
     if (isHidden) {
@@ -49,12 +50,21 @@ function SideBar({
         <img src="images/TasksIcon.png" />
       </div>
       <div
-      style={ {background: InvestmentPropositionsSettings.isHidden ? "#1f322e" : "rgba(62,172,145,175)"}}
+      style={ {background: InvestmentPropositionsSettings.isHidden ? "#002E3C" : "#608081"}}
       className="VisibilityToggle"
       onClick={() => handleToggle(InvestmentPropositionsSettings)}
       >
         <img src="images/InvestmentPropositionsIcon.png" />
       </div>
+
+      <div
+      style={ {background: CurrencyConverterSettings.isHidden ? "#002E3C" : "#608081"}}
+      className="VisibilityToggle"
+      onClick={() => handleToggle(CurrencyConverterSettings)}
+      >
+        <img src="images/CurrencyConverterIcon.png" />
+      </div>
+
     </div>
   )
 }

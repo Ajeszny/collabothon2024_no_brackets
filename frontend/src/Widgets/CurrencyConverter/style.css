@@ -1,0 +1,65 @@
+.CurrencyConverter {
+    display: flex;
+    width: 320px;
+    padding: 10px 0;
+    flex-direction: column;
+    background-color: #608081; /* Container background color */
+    border-radius: 16px; 
+    color: black;
+    box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+    transition: opacity 0.5s;
+
+  }
+  
+  .CurrencyContent {
+    width: calc(100% - 20px);
+    display: flex;
+    padding: 0 10px;
+    flex-direction: column;
+  }
+  
+  .InputRow {
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 10px; 
+  }
+  
+  .AmountInput {
+    flex: 1; 
+    padding: 10px;
+    margin-right: 10px; 
+    border-radius: 5px;
+   /* border: 1px solid #ccc;*/
+    background-color: #90A3A4; /* Background color for input */
+    font-family: Arial, sans-serif; 
+    color: #000000; 
+    font-weight: bold;
+  }
+  
+  .CurrencySelect {
+    width: 100px; 
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #608081; /* Background color for dropdown */
+    font-family: Arial, sans-serif; 
+    color: #000000; 
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  .ConvertedAmount {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff; /* Make the text white for contrast */
+  }
+  
+  .ExchangeRate {
+    margin-top: 10px; 
+    color: #333; 
+    font-size: 14px; 
+    text-align: center;
+  }
+  
+
+  

@@ -13,6 +13,9 @@ function Main() {
   const [TasksWasPressed, setTasksWasPressed] = useState(false);
   const [InvestmentPropositionsIsHidden, setInvestmentPropositionsIsHidden] = useState(false);
   const [InvestmentPropositionsWasPressed, setInvestmentPropositionsWasPressed] = useState(false);
+  const [CurrencyConverterIsHidden, setCurrencyConverterIsHidden] = useState(false);
+  const [CurrencyConverterWasPressed, setCurrencyConverterWasPressed] = useState(false);
+  
 
   const MailSettings = {
     isHidden: MailIsHidden,
@@ -49,6 +52,13 @@ function Main() {
     setWasPressed: setInvestmentPropositionsWasPressed,
   };
 
+  
+  const CurrencyConverterSettings = {
+    isHidden: CurrencyConverterIsHidden,
+    setIsHidden: setCurrencyConverterIsHidden,
+    wasPressed: CurrencyConverterWasPressed,
+    setWasPressed: setCurrencyConverterWasPressed,
+  };
 
   return (
     <div className="Main">
@@ -60,6 +70,7 @@ function Main() {
           FinancialOverviewSettings={FinancialOverviewSettings}
           TasksSettings={TasksSettings}
           InvestmentPropositionsSettings={InvestmentPropositionsSettings}
+          CurrencyConverterSettings={CurrencyConverterSettings}
         />
         <WidgetsContainer 
           MailSettings={MailSettings}
@@ -67,6 +78,8 @@ function Main() {
           FinancialOverviewSettings={FinancialOverviewSettings}
           TasksSettings={TasksSettings}
           InvestmentPropositionsSettings={InvestmentPropositionsSettings}
+          CurrencyConverterSettings={CurrencyConverterSettings}
+          
         />
       </div>
     </div>
