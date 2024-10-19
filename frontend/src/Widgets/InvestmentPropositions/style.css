@@ -6,6 +6,9 @@
   background-color: #608081; 
   border-radius: 16px; 
   color: black;
+  -webkit-box-shadow: 12px 12px 0 0 rgba(30, 30, 30, 0.75);
+  -moz-box-shadow: 12px 12px 0 0 rgba(30, 30, 30, 0.75);
+  box-shadow: 12px 12px 0 0 rgba(30, 30, 30, 0.75);
   transition: opacity 0.5s;
 }
 
@@ -34,7 +37,6 @@
 
 .InvestmentRowValue {
   font-weight: bold;
-  
 }
 
 .ProgressBar {

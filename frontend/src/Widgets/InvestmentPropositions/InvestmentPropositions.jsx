@@ -8,7 +8,6 @@ function InvestmentPropositions({
   wasPressed,
   setWasPressed
 }) {
-  console.log({ wasPressed });
   return (
     isHidden ?
       <></> :

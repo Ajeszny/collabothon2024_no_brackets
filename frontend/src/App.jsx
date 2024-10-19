@@ -1,7 +1,6 @@
 import './style.css';
 import NavBar from './NavBar';
 import Main from './Main';
-import axios from 'axios';
 
 function App() {
   return (

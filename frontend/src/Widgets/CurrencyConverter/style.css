@@ -8,8 +8,29 @@
     color: black;
     box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
     transition: opacity 0.5s;
-
   }
+
+.SwapCurrencies {
+  position: relative;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  top: -30px;
+  right: calc(-100% + 64px);
+}
+
+.SwapIcon:hover {
+  background: #709a9c;
+}
+
+.SwapIcon {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.5s;
+  cursor: pointer;
+}
   
   .CurrencyContent {
     width: calc(100% - 20px);
@@ -19,9 +40,10 @@
   }
   
   .InputRow {
+    width: 100%;
     display: flex; 
     justify-content: space-between; 
-    margin-bottom: 10px; 
+    margin-bottom: 30px; 
   }
   
   .AmountInput {

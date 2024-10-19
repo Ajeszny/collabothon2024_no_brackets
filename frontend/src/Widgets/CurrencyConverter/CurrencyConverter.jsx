@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import '../style.css';
 import WidgetCloseButton from '../WidgetCloseButton';
-import axios from 'axios';
 
 function CurrencyConverter({
   isHidden,
@@ -10,31 +9,39 @@ function CurrencyConverter({
   wasPressed,
   setWasPressed
 }) {
-  const [currencies, setCurrencies] = useState([]);
   const [fromCurrency, setFromCurrency] = useState('USD');
   const [toCurrency, setToCurrency] = useState('EUR');
   const [amount, setAmount] = useState(1);
   const [convertedAmount, setConvertedAmount] = useState(0);
   const [exchangeRate, setExchangeRate] = useState(1);
 
+  const currencies = ['EUR', 'USD', 'PLN', 'UAH'];
+
+  const handleCurrenciesSwap = () => {
+    const _fromCurrency = fromCurrency;
+    const _toCurrency = toCurrency;
+    setFromCurrency(_toCurrency);
+    setToCurrency(_fromCurrency);
+  };
+
   useEffect(() => {
-    // Fetch available currencies and the initial exchange rate
-    axios.get('https://api.exchangerate-api.com/v4/latest/USD')
-      .then(response => {
-        const currencyList = Object.keys(response.data.rates);
-        setCurrencies(currencyList);
-        setExchangeRate(response.data.rates[toCurrency]);
-      });
+    const fetchData = async () => {
+      const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+      const json = await response.json();
+      setExchangeRate(json.rates[toCurrency]);
+    }
+    fetchData();
   }, []);
 
   useEffect(() => {
-    // Update the exchange rate when the selected currencies change
+    const fetchData = async () => {
+      const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`);
+      const json = await response.json();
+      setExchangeRate(json.rates[toCurrency]);
+      setConvertedAmount((amount * json.rates[toCurrency]).toFixed(2));
+    }
     if (fromCurrency !== toCurrency) {
-      axios.get(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`)
-        .then(response => {
-          setExchangeRate(response.data.rates[toCurrency]);
-          setConvertedAmount((amount * response.data.rates[toCurrency]).toFixed(2));
-        });
+      fetchData();
     }
   }, [fromCurrency, toCurrency, amount]);
 
@@ -61,10 +68,8 @@ function CurrencyConverter({
         </div>
 
         <div className="CurrencyContent">
-          {/* First row: Amount input and from currency selection */}
           <div className="InputRow">
             <input
-              type="number"
               value={amount}
               onChange={handleAmountChange}
               placeholder="Amount to convert"
@@ -79,10 +84,15 @@ function CurrencyConverter({
             </select>
           </div>
 
-          {/* Second row: Converted amount input and to currency selection */}
+          <div
+          className="SwapCurrencies"
+          onClick={handleCurrenciesSwap}
+          >
+            <img src="images/TasksArrows1.png" className="SwapIcon" />
+          </div>
+
           <div className="InputRow">
             <input
-              type="number"
               value={convertedAmount}
               onChange={handleConvertedAmountChange}
               placeholder="Converted amount"
