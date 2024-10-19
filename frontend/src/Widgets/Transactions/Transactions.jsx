@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import './style.css'; // Your existing styles
 import '../style.css'; // Your existing styles
 import WidgetCloseButton from '../WidgetCloseButton';
@@ -6,14 +6,23 @@ import WidgetCloseButton from '../WidgetCloseButton';
 function Transactions() {
   const [isHidden, setIsHidden] = useState(false);
   const [wasPressed, setWasPressed] = useState(false);
+  const [transactions, setTransactions] = useState([])
 
-  const transactions = [
-    { description: "kupno czegos tam", account: "account: **** 1111", amount: "-7590.0", currency: "eur", positive: false },
-    { description: "odsetki", account: "account: **** 2222", amount: "+10.0", currency: "usd", positive: true },
-    { description: "prewalutowanie", account: "account: **** 1111", amount: "-12.0", currency: "usd", positive: false },
-    { description: "lorem ipsum",account: "account: **** 2222", amount: "+10.0", currency: "usd", positive: true },
-    { description: "lorem ipsum", account: "account: **** 2222", amount: "+10.0", currency: "usd", positive: true }
-  ];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch("http://localhost:8000/get_transactions", {method: "GET"});
+      const json = await data.json();
+      setTransactions(json);
+      //console.log({ json });
+    };
+
+    fetchData()
+      .catch(err => {
+        console.error({ err });
+      });
+  }, []);
+
 
   return (
     isHidden ? null : (
