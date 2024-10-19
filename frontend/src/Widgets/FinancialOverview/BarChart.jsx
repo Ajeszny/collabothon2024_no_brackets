@@ -11,6 +11,8 @@ const data = [
 ];
 
 const BarChart = () => {
+  const renderLegendText = (value) => <span style={{ color: 'black' }}>{value}</span>;
+
   return (
     <RechartsBarChart
       data={data}
@@ -20,7 +22,9 @@ const BarChart = () => {
       <XAxis dataKey="name" tick={{ fill: 'black' }} />
       <YAxis tick={{ fill: 'black' }} />
       <Tooltip />
-      <Legend />
+      <Legend 
+        formatter={renderLegendText}
+      />
       <Bar dataKey="income" fill="#314C2B" />
       <Bar dataKey="expenses" fill="#743838" />
     </RechartsBarChart>
