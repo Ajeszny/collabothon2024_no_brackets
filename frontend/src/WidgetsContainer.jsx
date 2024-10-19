@@ -1,6 +1,5 @@
 import React from 'react';
 import Mail from './Widgets/Mail/Mail';
-import WidgetTemplate from './Widgets/WidgetTemplate';
 
 function WidgetsContainer({ isOpen }) {
   return (
@@ -8,7 +7,7 @@ function WidgetsContainer({ isOpen }) {
     style={{ width: isOpen ? "90%" : "95%" }}
     className="WidgetsContainer"
     >
-      <WidgetTemplate icon="images/MailIcon.png" title="Mail" width={400} height={300} Content={ <Mail /> } />
+      <Mail />
     </div>
   )
 }

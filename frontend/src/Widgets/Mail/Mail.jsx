@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import MailRow from './MailRow';
-import './style.css';
+import React, { useState } from 'react'
+import './style.css'
+import '../style.css'
+import WidgetCloseButton from '../WidgetCloseButton'
 
 function Mail() {
-  const [mails, setMails] = useState([]);
-
-  useEffect(() => {
-    setMails(
-      prev => [
-      { content: "Unauthorized access", type: "urgent" },
-      { content: "Something", type: "regular" },
-      ...prev
-    ]);
-  }, []);
-
-  const mail = mails.map(mail => <MailRow content={mail.content} type={mail.type} />);
-  for (let i = mail.length; i < 5; i++) {
-    mail.push(<MailRow content="Empty" type="empty" />);
-  }
+  const [isHidden, setIsHidden] = useState(false);
+  const [wasPressed, setWasPressed] = useState(false);
 
   return (
-    <div class="Mail">
-      { mail }
+    isHidden ?
+    <></> :
+    <div
+    style={ wasPressed ? { background: "gray" } : {} }
+    className="Mail"
+    >
+      <WidgetCloseButton setIsHidden={setIsHidden} setWasPressed={setWasPressed} />
+      <div className="Header">
+        <img className="HeaderIcon" src="images/MailIcon.png" />
+        <p className="HeaderTitle">Mail</p>
+      </div>
+      <div className="MailContent">
+        something
+      </div>
     </div>
   )
 }
