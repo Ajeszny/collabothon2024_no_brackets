@@ -34,3 +34,13 @@
   border-bottom: 1px solid black;
   text-align: center;
 }
+
+.AdditionalInfo {
+  margin-top: 5px; /* Space between the subject and additional info */
+  font-size: 0.9em; /* Slightly smaller text */
+  color: #ffffff; /* Change to your preferred color */
+  text-align: left; /* Align the text */
+  background-color: rgba(0, 0, 0, 0.7); /* Optional: background for better readability */
+  padding: 5px; /* Optional: padding for aesthetics */
+  border-radius: 5px; /* Optional: rounded corners */
+}

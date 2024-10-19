@@ -12,6 +12,7 @@ function Mail({
 }) {
   const [mails, setMails] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [hoveredMailId, setHoveredMailId] = useState(null); // State to track which mail is hovered
 
   useEffect(() => {
     setLoading(true);
@@ -48,16 +49,26 @@ function Mail({
   }
 
   const renderMails = () => mails.map((mail) => (
-    <div className="MailRow">
+    <div
+      className="MailRow"
+      key={mail.id} // Add a unique key for each mail
+      onMouseEnter={() => setHoveredMailId(mail.id)} // Set hovered mail id on mouse enter
+      onMouseLeave={() => setHoveredMailId(null)} // Reset hovered mail id on mouse leave
+    >
       <div className="MailRowIcon"><img src="images/MailRowUrgentIcon.png" /></div>
-      <div className="MailRowContent">{mail.subject}</div>
+      <div className="MailRowContent">
+        {mail.subject}
+        {/* Show additional information on hover */}
+        {hoveredMailId === mail.id && (
+          <div className="AdditionalInfo">{mail.additionalInfo}</div> // Ensure 'additionalInfo' exists in your data
+        )}
+      </div>
     </div>
   ));
 
-
   return (
-    isHidden ?
-    <></> :
+    isHidden ? 
+    <></> : 
     <div
     style={ wasPressed ? { opacity: 0 } : { opacity: 1 } }
     className="Mail"
@@ -74,26 +85,4 @@ function Mail({
   )
 }
 
-export default Mail
-
-
-// <div className="MailRow">
-//           <div className="MailRowIcon"><img src="images/MailRowUrgentIcon.png" /></div>
-//           <div className="MailRowContent">Urgent message</div>
-//         </div>
-//         <div className="MailRow">
-//           <div className="MailRowIcon"><img src="images/MailRowRegularIcon.png" /></div>
-//           <div className="MailRowContent">Regular message</div>
-//         </div>
-//         <div className="MailRow">
-//           <div className="MailRowIcon"><img src="images/MailRowRegularIcon.png" /></div>
-//           <div className="MailRowContent">Empty message</div>
-//         </div>
-//         <div className="MailRow">
-//           <div className="MailRowIcon"><img src="images/MailRowRegularIcon.png" /></div>
-//           <div className="MailRowContent">Empty message</div>
-//         </div>
-//         <div className="MailRow">
-//           <div className="MailRowIcon"><img src="images/MailRowRegularIcon.png" /></div>
-//           <div className="MailRowContent">Empty message</div>
-//         </div>
+export default Mail;
