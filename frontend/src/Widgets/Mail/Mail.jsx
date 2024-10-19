@@ -11,7 +11,7 @@ function Mail() {
     isHidden ?
     <></> :
     <div
-    style={ wasPressed ? { background: "gray" } : {} }
+    style={ wasPressed ? { opacity: 0 } : {} }
     className="Mail"
     >
       <WidgetCloseButton setIsHidden={setIsHidden} setWasPressed={setWasPressed} />

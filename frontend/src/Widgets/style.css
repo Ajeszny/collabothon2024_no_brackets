@@ -32,4 +32,5 @@
 
 .WidgetCloseButtonIcon:hover {
   background-color: #4a4a4a;
+  cursor: pointer;
 }

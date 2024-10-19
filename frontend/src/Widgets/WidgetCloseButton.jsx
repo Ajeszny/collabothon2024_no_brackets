@@ -7,7 +7,7 @@ function WidgetCloseButton({ setIsHidden, setWasPressed }) {
     return new Promise((resolve) => {
       setTimeout(() => {
         setIsHidden(true);
-      }, 3000);
+      }, 500);
     });
   };
 

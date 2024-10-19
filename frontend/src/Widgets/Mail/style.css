@@ -11,6 +11,7 @@
   -webkit-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
   -moz-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
   box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+  transition: opacity 0.5s;
 }
 
 .MailRow {

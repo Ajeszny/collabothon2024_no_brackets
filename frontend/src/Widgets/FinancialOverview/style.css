@@ -1,6 +1,7 @@
 .FinancialOverview {
   display: flex;
-  width: 600px;
+  width: 680px;
+  padding: 0 10px;
   flex-direction: column;
   align-items: start;
   justify-content: start;
@@ -10,6 +11,7 @@
   -webkit-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
   -moz-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
   box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+  transition: opacity 0.5s;
 }
 
 .FinancialOverviewContent {
@@ -23,4 +25,36 @@
 
 .FinancialOverviewChart {
   border-right: 1px solid black;
+}
+
+.FinancialOverviewBarChart {
+  border-left: 1px solid black;
+}
+
+.DropDown {
+  position: relative;
+  top: -4px;
+  right: -360px;
+}
+
+.DropDownMenu {
+  font-size: 14px;
+  padding: 1px 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+  cursor: pointer;
+}
+
+.DropDown::after {
+  content: '▼'; /* Custom arrow */
+  font-size: 12px;
+  /*position: absolute;*/
+  /*right: 10px;*/
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }

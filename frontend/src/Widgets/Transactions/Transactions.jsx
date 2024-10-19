@@ -17,7 +17,7 @@ function Transactions() {
 
   return (
     isHidden ? null : (
-      <div style={wasPressed ? { background: "gray" } : {}} className="TransactionWidget">
+      <div style={wasPressed ? { opacity: 0 } : {}} className="TransactionWidget">
         <WidgetCloseButton setIsHidden={setIsHidden} setWasPressed={setWasPressed} />
         <div className="Header">
           <img className="HeaderIcon" src="images/TransactionIcon.png" alt="Transaction Icon" />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
 const data = [
   { name: "Trochę tu", value: 800 },
@@ -22,6 +22,8 @@ const InteractivePieChart = () => {
   const onPieLeave = () => {
     setActiveIndex(-1);
   };
+
+  const renderLegendText = (value) => <span style={{ color: 'black' }}>{value}</span>;
 
   return (
     <PieChart width={340} height={240}>
@@ -51,7 +53,9 @@ const InteractivePieChart = () => {
       wrapperStyle={{
         width: '120px',
         padding: '10px',
+        color: 'black',
       }}
+      formatter={renderLegendText}
       />
       <text 
       x={100}
