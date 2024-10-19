@@ -3,9 +3,12 @@ import './style.css';
 import '../style.css'; 
 import WidgetCloseButton from '../WidgetCloseButton';
 
-function Tasks() {
-  const [isHidden, setIsHidden] = useState(false);
-  const [wasPressed, setWasPressed] = useState(false);
+function Tasks({ 
+  isHidden,
+  setIsHidden,
+  wasPressed,
+  setWasPressed
+}) {
   const [view, setView] = useState("list"); // Toggle between list and calendar view
 
   // Sample tasks with different types (task and meeting)
@@ -28,7 +31,9 @@ function Tasks() {
 
   return (
     isHidden ? null : (
-      <div style={wasPressed ? { background: "gray" } : {}} className="TasksWidget">
+      <div 
+      style={ wasPressed ? { opacity: 0 } : { opacity: 1 } }
+      className="TasksWidget">
         <WidgetCloseButton setIsHidden={setIsHidden} setWasPressed={setWasPressed} />
         <div className="Header">
           <img className="HeaderIcon" src="images/TasksIcon.png" alt="Tasks Icon" />
@@ -39,7 +44,6 @@ function Tasks() {
             <img src="images/TasksArrows2.png" alt="Switch View Icon" />
           </button>
 
-          <WidgetCloseButton setIsHidden={setIsHidden} setWasPressed={setWasPressed} />
         </div>
 
         <div className="TasksContent">
