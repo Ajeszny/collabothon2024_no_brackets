@@ -1,8 +1,48 @@
-from backend.process_data import calculate_card_balance_and_transaction_type_summary
-from backend.synthetic_data import create_synthetic_card_data
+from backend.Analyzer import FinancialAdvisor
 
 if __name__ == '__main__':
-    print("hi")
+
+    # Initialize advisor
+    advisor = FinancialAdvisor()
+
+    # Generate synthetic data
+    card_data, transactions_df = advisor.create_synthetic_card_data()
+
+    # Generate recommendations
+    recommendations = advisor.generate_investment_recommendations(card_data, transactions_df)
+
+    # Print recommendations in a formatted way
+    print("\nFinancial Analysis and Recommendations")
+    print("=====================================")
+
+    print("\nFinancial Summary:")
+    for key, value in recommendations['financial_summary'].items():
+        print(f"{key.replace('_', ' ').title()}: ${value:,.2f}")
+
+    print("\nInvestment Recommendations:")
+    if isinstance(recommendations['recommendations']['investment_allocation'], dict):
+        if 'message' in recommendations['recommendations']['investment_allocation']:
+            print(recommendations['recommendations']['investment_allocation']['message'])
+        else:
+            for asset, details in recommendations['recommendations']['investment_allocation'].items():
+                print(f"\n{asset.title()}:")
+                print(f"  Percentage: {details['percentage']}%")
+                print(f"  Amount: ${details['amount']:,.2f}")
+                print(f"  Strategy: {details['description']}")
+
+    print("\nTop Stock Picks:")
+    for stock in recommendations['recommendations']['top_stock_picks']:
+        print(f"Symbol: {stock['symbol']}")
+        print(f"Monthly Return: {stock['monthly_return']:.2f}%")
+        print(f"Risk Score: {stock['risk_score']:.2f}")
+        print()
+
+    print("Savings Tips:")
+    for tip in recommendations['savings_tips']:
+        print(f"- {tip}")
+
+    print(f"\nRisk Profile Assessment:")
+    print(recommendations['risk_assessment'])
 
 
 
