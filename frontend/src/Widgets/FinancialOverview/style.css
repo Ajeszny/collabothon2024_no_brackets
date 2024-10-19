@@ -1,7 +1,6 @@
 .FinancialOverview {
   display: flex;
   width: 680px;
-  padding: 0 10px;
   flex-direction: column;
   align-items: start;
   justify-content: start;
@@ -25,10 +24,6 @@
 
 .FinancialOverviewChart {
   border-right: 1px solid black;
-}
-
-.FinancialOverviewBarChart {
-  border-left: 1px solid black;
 }
 
 .DropDown {
