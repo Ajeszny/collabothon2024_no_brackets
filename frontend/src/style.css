@@ -64,7 +64,7 @@
   margin: 0 20px;
   height: 100%;
   border-radius: 56px;
-  background: #1f322e;
+  background: #002E3C;
   width: 64px;
   display: flex;
   flex-direction: column;
@@ -74,17 +74,17 @@
 
 .VisibilityToggle {
   border-radius: 50%;
-  width: 63px;
-  height: 63px;
-  background: #1f322e;
-  border: 1px solid black;
+  width: 62px;
+  height: 62px;
+  background: #608081;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: background 0.5s;
+  margin: 1px;
 }
 
 .VisibilityToggle:hover {
-  background: rgba(62,172,145,175);
+  background: #608081;
 }
