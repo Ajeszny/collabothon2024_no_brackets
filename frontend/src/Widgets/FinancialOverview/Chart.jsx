@@ -1,34 +1,12 @@
 import React, { useState } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
-//const data = [
- // { name: "Trochę tu", value: 800 },
- // { name: "trochę tam", value: 300 },
- // { name: "800+", value: 300 },
- // { name: "mops", value: 200 },
- // { name: "fein", value: 300 },
- // { name: "fraud", value: 200 },
-//];
+//const data = [{ name: "Trochę tu", value: 800 },{ name: "trochę tam", value: 300 },{ name: "800+", value: 300 },{ name: "mops", value: 200 },{ name: "fein", value: 300 },{ name: "fraud", value: 200 },];
 
 const COLORS = ["#333d39", "#355046", "#3d7a64", "#37a57d", "#23d191", "#80BEA5"];
 
-const InteractivePieChart = () => {
+const InteractivePieChart = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(-1);
-  const [data, setData] = useState([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch("http://localhost:8000/get_balance?currency=EUR", {method: "GET"});
-      const json = await data.json();
-      setTransactions(json);
-      //console.log({ json });
-    };
-
-    fetchData()
-      .catch(err => {
-        console.error({ err });
-      });
-  }, []);
 
   const onPieEnter = (_, index) => {
     setActiveIndex(index);
@@ -40,8 +18,17 @@ const InteractivePieChart = () => {
 
   const renderLegendText = (value) => <span style={{ color: 'black' }}>{value}</span>;
 
+  let sum = 0;
+
+  for (let index = 0; index < data.length; index++) {
+    sum += data[index].value;
+    
+  }
+
   return (
-    <PieChart width={340} height={240}>
+    !data ? 
+    <></> :
+    <PieChart width={340} height={240} key={JSON.stringify(data)}>
       <Pie
         data={data}
         innerRadius={80}
@@ -50,6 +37,8 @@ const InteractivePieChart = () => {
         dataKey="value"
         onMouseEnter={onPieEnter}
         onMouseLeave={onPieLeave}
+        animationBegin={0}
+        animationDuration={1000}
       >
         {data.map((entry, index) => (
           <Cell
@@ -77,7 +66,7 @@ const InteractivePieChart = () => {
       y={124}
       textAnchor="middle"
       style={{ fontSize: '16px' }}
-      >748348,73</text>
+      >{sum}</text>
     </PieChart>
   );
 };
