@@ -4,7 +4,6 @@ import Mail from './Widgets/Mail/Mail';
 import Transactions from './Widgets/Transactions/Transactions';
 import Tasks from './Widgets/Tasks/Tasks';
 import InvestmentPropositions from './Widgets/InvestmentPropositions/InvestmentPropositions';
-import Grid from 'react-easy-grid-dnd'
 import CurrencyConverter from './Widgets/CurrencyConverter/CurrencyConverter';
 
 
