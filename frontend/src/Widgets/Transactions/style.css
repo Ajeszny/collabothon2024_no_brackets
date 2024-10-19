@@ -9,13 +9,19 @@
     -webkit-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
     -moz-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
     box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
-    transition: opacity 0.5s;
+  }
+
+  .AdditionalInfo{
+    font-size: 12px;
+    margin-top: 5px;
+    
+    border-radius: 5px;
   }
   
   .Header {
     display: flex;
     align-items: center;
-    padding: 10px 20px; /* Add padding for consistent spacing */
+    padding: 10px 20px; 
     margin-bottom: 10px;
   }
   
@@ -32,14 +38,14 @@
   }
   
   .TransactionsContent {
-    padding: 0 20px; /* Added padding for content alignment */
+    padding: 0 20px; 
     margin-top: 10px;
   }
   
   .Transaction {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Ensures vertical centering of elements */
+    align-items: center; 
     margin-bottom: 10px;
     padding-bottom: 5px;
     border-bottom: 1px solid black;
@@ -65,7 +71,7 @@
     font-size: 14px;
     font-weight: bold;
     text-align: right;
-    margin-left: auto; /* Pushes amount to the right side */
+    margin-left: auto; 
   }
   
   .Amount.positive {
@@ -75,4 +81,3 @@
   .Amount.negative {
     color: rgba(119, 46, 46, 1);
   }
-  
