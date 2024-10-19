@@ -1,0 +1,74 @@
+.InvestmentPropositions {
+  display: flex;
+  width: 300px;
+  padding: 10px;
+  flex-direction: column;
+  background-color: #608081; 
+  border-radius: 16px; 
+  color: black;
+  box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+  transition: opacity 0.5s;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  justify-content: space-between; /* Align icon and close button */
+}
+
+.HeaderIcon {
+  width: 24px; 
+  height: 24px; 
+  margin-right: 10px;
+}
+
+.HeaderTitle {
+  font-size: 1.5em; 
+  font-weight: bold;
+  flex-grow: 1; 
+}
+
+.InvestmentContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.InvestmentRow {
+  width: calc(100% - 40px);
+  padding: 10px 20px;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  text-align: left; 
+}
+
+.InvestmentRowContent {
+  width: 100%;
+  font-weight: bold;
+  text-align: left;
+  
+}
+
+.InvestmentRowValue {
+  font-weight: bold;
+  
+}
+
+.ProgressBar {
+  width: 100%;
+  height: 10px;
+  background-color: #d3d3d3;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.Progress {
+  height: 100%;
+  background-color: #3CB371; /* Green bar */
+  border-radius: 5px;
+}

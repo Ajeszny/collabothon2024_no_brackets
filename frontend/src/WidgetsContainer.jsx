@@ -3,12 +3,15 @@ import FinancialOverview from './Widgets/FinancialOverview/FinancialOverview';
 import Mail from './Widgets/Mail/Mail';
 import Transactions from './Widgets/Transactions/Transactions';
 import Tasks from './Widgets/Tasks/Tasks';
+import InvestmentPropositions from './Widgets/InvestmentPropositions/InvestmentPropositions';
+
 
 function WidgetsContainer({
   MailSettings,
   TransactionsSettings,
   FinancialOverviewSettings,
-  TasksSettings
+  TasksSettings,
+  InvestmentPropositionsSettings
 }) {
   return (
     <div className="WidgetsContainer">
@@ -35,6 +38,12 @@ function WidgetsContainer({
       setIsHidden={TasksSettings.setIsHidden}
       wasPressed={TasksSettings.wasPressed}
       setWasPressed={TasksSettings.setWasPressed}
+      />
+      <InvestmentPropositions
+      isHidden={InvestmentPropositionsSettings.isHidden}
+      setIsHidden={InvestmentPropositionsSettings.setIsHidden}
+      wasPressed={InvestmentPropositionsSettings.wasPressed}
+      setWasPressed={InvestmentPropositionsSettings.setWasPressed}
       />
     </div>
   )

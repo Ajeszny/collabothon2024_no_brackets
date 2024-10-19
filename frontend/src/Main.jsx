@@ -11,6 +11,8 @@ function Main() {
   const [FinancialOverviewWasPressed, setFinancialOverviewWasPressed] = useState(false);
   const [TasksIsHidden, setTasksIsHidden] = useState(false);
   const [TasksWasPressed, setTasksWasPressed] = useState(false);
+  const [InvestmentPropositionsIsHidden, setInvestmentPropositionsIsHidden] = useState(false);
+  const [InvestmentPropositionsWasPressed, setInvestmentPropositionsWasPressed] = useState(false);
 
   const MailSettings = {
     isHidden: MailIsHidden,
@@ -40,6 +42,13 @@ function Main() {
     setWasPressed: setTasksWasPressed,
   };
 
+  const InvestmentPropositionsSettings = {
+    isHidden:  InvestmentPropositionsIsHidden,
+    setIsHidden: setInvestmentPropositionsIsHidden,
+    wasPressed:  InvestmentPropositionsWasPressed,
+    setWasPressed: setInvestmentPropositionsWasPressed,
+  };
+
 
   return (
     <div className="Main">
@@ -50,12 +59,14 @@ function Main() {
           TransactionsSettings={TransactionsSettings}
           FinancialOverviewSettings={FinancialOverviewSettings}
           TasksSettings={TasksSettings}
+          InvestmentPropositionsSettings={InvestmentPropositionsSettings}
         />
         <WidgetsContainer 
           MailSettings={MailSettings}
           TransactionsSettings={TransactionsSettings}
           FinancialOverviewSettings={FinancialOverviewSettings}
           TasksSettings={TasksSettings}
+          InvestmentPropositionsSettings={InvestmentPropositionsSettings}
         />
       </div>
     </div>
