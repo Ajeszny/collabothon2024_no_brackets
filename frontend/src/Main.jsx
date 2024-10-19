@@ -9,6 +9,8 @@ function Main() {
   const [TransactionsWasPressed, setTransactionsWasPressed] = useState(false);
   const [FinancialOverviewIsHidden, setFinancialOverviewIsHidden] = useState(false);
   const [FinancialOverviewWasPressed, setFinancialOverviewWasPressed] = useState(false);
+  const [TasksIsHidden, setTasksIsHidden] = useState(false);
+  const [TasksWasPressed, setTasksWasPressed] = useState(false);
 
   const MailSettings = {
     isHidden: MailIsHidden,
@@ -31,6 +33,14 @@ function Main() {
     setWasPressed: setFinancialOverviewWasPressed,
   };
 
+  const TasksSettings = {
+    isHidden: TasksIsHidden,
+    setIsHidden: setTasksIsHidden,
+    wasPressed: TasksWasPressed,
+    setWasPressed: setTasksWasPressed,
+  };
+
+
   return (
     <div className="Main">
       <div className="Greeting">Hello, User!</div>
@@ -39,11 +49,13 @@ function Main() {
           MailSettings={MailSettings}
           TransactionsSettings={TransactionsSettings}
           FinancialOverviewSettings={FinancialOverviewSettings}
+          TasksSettings={TasksSettings}
         />
         <WidgetsContainer 
           MailSettings={MailSettings}
           TransactionsSettings={TransactionsSettings}
           FinancialOverviewSettings={FinancialOverviewSettings}
+          TasksSettings={TasksSettings}
         />
       </div>
     </div>

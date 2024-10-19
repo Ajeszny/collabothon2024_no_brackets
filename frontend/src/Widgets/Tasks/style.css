@@ -1,0 +1,114 @@
+/* Calendar view styles */
+.CalendarView {
+    padding: 20px;
+  }
+  
+  .CalendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 days in a week */
+    grid-gap: 10px;
+  }
+  
+  .CalendarDay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    height: 50px; /* Adjust for your design */
+    position: relative;
+  }
+  
+  .CalendarIcon {
+    width: 12px;
+    height: 12px;
+    margin-top: 5px;
+  }
+  
+  .SwitchViewButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .SwitchViewButton img {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+  }
+  
+  .TasksWidget {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 0 0 10px;
+    background-color: #608081;
+    border-radius: 16px;
+    color: black;
+    box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 0.75);
+    transition: opacity 0.5s;
+  }
+  
+  .Header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+  }
+  
+  .HeaderIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  .HeaderTitle {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+  }
+  
+  .TasksContent {
+    padding: 0 20px;
+    margin-top: 10px;
+  }
+  
+  .TasksRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+  }
+  
+  .TasksRowIcon img {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+  }
+  
+  .Description_task {
+    font-size: 14px;
+    color: black;
+    font-weight: normal;
+  }
+  
+  .Time {
+    font-size: 14px;
+    text-align: right;
+    margin-left: auto;
+    font-weight: bold;
+  }
+  
+  .Time.task {
+    color: rgba(42, 47, 47, 1);
+  }
+  
+  .Time.meeting {
+    color: rgba(119, 46, 46, 1);
+  }
+  

@@ -1,7 +1,8 @@
 function SideBar({
   MailSettings,
   TransactionsSettings,
-  FinancialOverviewSettings
+  FinancialOverviewSettings,
+  TasksSettings,
 }) {
   const handleToggle = ({ isHidden, setIsHidden, wasPressed, setWasPressed }) => {
     if (isHidden) {
@@ -38,6 +39,13 @@ function SideBar({
       onClick={() => handleToggle(FinancialOverviewSettings)}
       >
         <img src="images/FinancialOverviewIcon.png" />
+      </div>
+      <div
+      style={ {background: TasksSettings.isHidden ? "#1f322e" : "rgba(62,172,145,175)"}}
+      className="VisibilityToggle"
+      onClick={() => handleToggle(TasksSettings)}
+      >
+        <img src="images/TasksIcon.png" />
       </div>
     </div>
   )
