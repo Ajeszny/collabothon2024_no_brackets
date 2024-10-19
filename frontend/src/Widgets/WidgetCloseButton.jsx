@@ -2,13 +2,11 @@ import React from 'react'
 import './style.css'
 
 function WidgetCloseButton({ setIsHidden, setWasPressed }) {
-  const handleHideWidget = async () => {
+  const handleHideWidget = () => {
     setWasPressed(true);
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        setIsHidden(true);
-      }, 350);
-    });
+    setTimeout(() => {
+      setIsHidden(true);
+    }, 350);
   };
 
   return (

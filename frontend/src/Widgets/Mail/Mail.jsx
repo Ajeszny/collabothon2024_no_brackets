@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
 import './style.css'
 import '../style.css'
 import WidgetCloseButton from '../WidgetCloseButton'
 
-function Mail({ isHidden, setIsHidden, wasPressed, setWasPressed }) {
+function Mail({
+  isHidden,
+  setIsHidden,
+  wasPressed,
+  setWasPressed
+}) {
   return (
     isHidden ?
     <></> :
     <div
-    style={ wasPressed ? { opacity: 0 } : {} }
+    style={ wasPressed ? { opacity: 0 } : { opacity: 1 } }
     className="Mail"
     >
       <WidgetCloseButton setIsHidden={setIsHidden} setWasPressed={setWasPressed} />

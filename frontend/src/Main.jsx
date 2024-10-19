@@ -13,22 +13,22 @@ function Main() {
   const MailSettings = {
     isHidden: MailIsHidden,
     setIsHidden: setMailIsHidden,
-    MailWasPressed: MailWasPressed,
-    setMailWasPressed: setMailWasPressed,
+    wasPressed: MailWasPressed,
+    setWasPressed: setMailWasPressed,
   };
 
   const TransactionsSettings = {
     isHidden: TransactionsIsHidden,
     setIsHidden: setTransactionsIsHidden,
-    MailWasPressed: TransactionsWasPressed,
-    setMailWasPressed: setTransactionsWasPressed,
+    wasPressed: TransactionsWasPressed,
+    setWasPressed: setTransactionsWasPressed,
   };
 
   const FinancialOverviewSettings = {
     isHidden: FinancialOverviewIsHidden,
     setIsHidden: setFinancialOverviewIsHidden,
-    MailWasPressed: FinancialOverviewWasPressed,
-    setMailWasPressed: setFinancialOverviewWasPressed,
+    wasPressed: FinancialOverviewWasPressed,
+    setWasPressed: setFinancialOverviewWasPressed,
   };
 
   return (

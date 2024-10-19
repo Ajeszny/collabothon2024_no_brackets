@@ -3,12 +3,31 @@ import FinancialOverview from './Widgets/FinancialOverview/FinancialOverview';
 import Mail from './Widgets/Mail/Mail';
 import Transactions from './Widgets/Transactions/Transactions';
 
-function WidgetsContainer() {
+function WidgetsContainer({
+  MailSettings,
+  TransactionsSettings,
+  FinancialOverviewSettings
+}) {
   return (
     <div className="WidgetsContainer">
-      <Mail />
-      <FinancialOverview />
-      <Transactions />
+      <Mail 
+      isHidden={MailSettings.isHidden}
+      setIsHidden={MailSettings.setIsHidden}
+      wasPressed={MailSettings.wasPressed}
+      setWasPressed={MailSettings.setWasPressed}
+      />
+      <FinancialOverview 
+      isHidden={FinancialOverviewSettings.isHidden}
+      setIsHidden={FinancialOverviewSettings.setIsHidden}
+      wasPressed={FinancialOverviewSettings.wasPressed}
+      setWasPressed={FinancialOverviewSettings.setWasPressed}
+      />
+      <Transactions 
+      isHidden={TransactionsSettings.isHidden}
+      setIsHidden={TransactionsSettings.setIsHidden}
+      wasPressed={TransactionsSettings.wasPressed}
+      setWasPressed={TransactionsSettings.setWasPressed}
+      />
     </div>
   )
 }

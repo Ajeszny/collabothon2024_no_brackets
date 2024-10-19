@@ -76,7 +76,7 @@
   border-radius: 50%;
   width: 63px;
   height: 63px;
-  background-color: #1f322e;
+  background: #1f322e;
   border: 1px solid black;
   display: flex;
   align-items: center;

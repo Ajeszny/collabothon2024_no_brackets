@@ -18,7 +18,7 @@ function FinancialOverview({
     isHidden ?
     <></> :
     <div
-    style={ wasPressed ? { opacity: 0 } : {} }
+    style={ wasPressed ? { opacity: 0 } : { opacity: 1 } }
     className="FinancialOverview"
     >
       <WidgetCloseButton setIsHidden={setIsHidden} setWasPressed={setWasPressed} />
