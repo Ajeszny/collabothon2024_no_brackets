@@ -3,6 +3,13 @@ import pandas as pd
 import requests
 import json
 import random
+import os.path
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+
 
 def get_auth_token():
     url = "https://api-sandbox.commerzbank.com/auth/realms/sandbox/protocol/openid-connect/token"
@@ -64,3 +71,58 @@ def create_synthetic_card_data(n_cards=5, n_transactions=20):
     transactions_df = pd.concat(transactions, ignore_index=True)
 
     return card_data, transactions_df
+
+SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
+def get_email_info():
+  creds = None
+  if os.path.exists("D:\\Fuck Jetbrains\\Python\\collabothon2024_no_brackets\\backend\\cockpit\\token.json"):
+    creds = Credentials.from_authorized_user_file("D:\\Fuck Jetbrains\\Python\\collabothon2024_no_brackets\\backend\cockpit\\token.json", SCOPES)
+  if not creds or not creds.valid:
+    if creds and creds.expired and creds.refresh_token:
+      creds.refresh(Request())
+    else:
+      flow = InstalledAppFlow.from_client_secrets_file(
+          "credentials.json", SCOPES
+      )
+      creds = flow.run_local_server(port=0)
+    with open("token.json", "w") as token:
+      token.write(creds.to_json())
+
+  try:
+    tabla = ["URGENT", "REGULAR", "SPAM"]
+    service = build("gmail", "v1", credentials=creds)
+    results = service.users().messages().list(userId="me").execute()
+    messages = results.get("messages", [])
+
+    unread = []
+
+    for message in messages:
+      msg = service.users().messages().get(userId="me", id=message['id']).execute()
+      if 'UNREAD' in msg['labelIds']:
+        unread.append(message)
+
+    if not unread:
+      return None
+    size = len(unread)
+    if size > 5:
+      size = 5
+
+    ssi = []
+
+    for i in range(size):
+      msg = service.users().messages().get(userId="me", id=unread[i]['id']).execute()
+      subject = None
+      sender = None
+
+      for header in msg['payload']['headers']:
+        if header['name'] == 'From':
+          sender = header['value']
+        if header['name'] == 'Subject':
+          subject = header['value']
+
+      ssi.append({"subject": subject[:20] + '...', "sender": sender, "id": unread[i]['id'], "type": random.choice(tabla)})
+
+    return ssi
+
+  except HttpError as error:
+    print(f"An error occurred: {error}")

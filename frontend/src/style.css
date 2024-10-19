@@ -6,9 +6,29 @@
 }
 
 .NavBar {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Center items vertically */
   background-color: #002E3C;
   padding: 20px;
   width: calc(100% - 40px);
+}
+
+.LoginLock img{
+  width: 20px;
+  height: 20px;
+}
+
+.LoginLock {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+  color: white; /* Set text color to white */
+}
+
+.LoginText {
+  margin-left: 5px; /* Add some space between the icon and the text */
+  color: white; /* Ensure the text color is white */
+  font-size: 12px;
 }
 
 .Main {
@@ -29,29 +49,17 @@
   height: calc(100% - 40px);
 }
 
-.Greeting {
-  padding: 40px 0; 
-  font-size: 32px;
-  font-weight: bold;
-}
-
 .WidgetsContainer {
-  padding: 20px 0;
-  height: calc(100% - 40px);
-  background-color: rgba(100, 100, 100, 0.3);
-  width: calc(100% - 64px);
-  transition: width 0.5s;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  overflow: hidden;
-  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Set maximum of 3 columns */
+  gap: 5%; /* Space between widgets */
+  padding: 10px; /* Optional padding around the grid */
+  justify-items: stretch; /* Ensure items stretch to fill the cells */
 }
 
 .DummyWidget {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: #003A3C;

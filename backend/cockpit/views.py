@@ -9,7 +9,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from cockpit.commerzapi import create_synthetic_card_data
+from cockpit.commerzapi import create_synthetic_card_data, get_email_info
 from cockpit.models import Email
 
 emails = []
@@ -33,7 +33,8 @@ def get_task_list(request):
 
 @api_view(['GET'])
 def get_emails(request):
-    return Response(status=status.HTTP_200_OK, data={'emails': emails})
+    email_list = get_email_info()
+    return Response(status=status.HTTP_200_OK, data=email_list)
 
 
 @api_view(['POST'])
