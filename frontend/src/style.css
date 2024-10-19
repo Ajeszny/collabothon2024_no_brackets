@@ -6,9 +6,29 @@
 }
 
 .NavBar {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Center items vertically */
   background-color: #002E3C;
   padding: 20px;
   width: calc(100% - 40px);
+}
+
+.LoginLock img{
+  width: 20px;
+  height: 20px;
+}
+
+.LoginLock {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+  color: white; /* Set text color to white */
+}
+
+.LoginText {
+  margin-left: 5px; /* Add some space between the icon and the text */
+  color: white; /* Ensure the text color is white */
+  font-size: 12px;
 }
 
 .Main {
