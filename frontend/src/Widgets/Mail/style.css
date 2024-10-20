@@ -16,6 +16,7 @@
 
 .MailContent {
   display: flex;
+  flex-direction: column;
   align-items: start;
   justify-content: start;
   width: 100%;

@@ -97,3 +97,12 @@
 .VisibilityToggle:hover {
   background: #608081;
 }
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  user-select: none; /* Disable text selection */
+  position: absolute;
+}
