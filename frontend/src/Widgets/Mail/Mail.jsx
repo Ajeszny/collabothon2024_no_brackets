@@ -1,7 +1,7 @@
-import './style.css'
-import '../style.css'
-import { useState, useEffect } from 'react'
-import WidgetCloseButton from '../WidgetCloseButton'
+import './style.css';
+import '../style.css';
+import { useState, useEffect } from 'react';
+import WidgetCloseButton from '../WidgetCloseButton';
 import { BeatLoader } from 'react-spinners';
 
 function Mail({
@@ -12,23 +12,48 @@ function Mail({
 }) {
   const [mails, setMails] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [hoveredMailId, setHoveredMailId] = useState(null); // State to track which mail is hovered
+  const [hoveredMailId, setHoveredMailId] = useState(null);
+
+  // Array of available image URLs
+  const images = [
+    'images/MailRowUrgentIcon.png',
+    'images/MailRowRegularIcon.png',
+    'images/MailRowRegularIcon.png',
+  ];
+
+  // Function to get a random image from the array
+  const getRandomImage = () => {
+    return images[Math.floor(Math.random() * images.length)];
+  };
 
   useEffect(() => {
     setLoading(true);
-    //const fetchData = async () => {
-    //  const data = await fetch("http://localhost:8000/get_email", { method: "GET" });
-    //  const json = await data.json();
-    //  setMails(json);
-    //  setTimeout(() => {
-    //    setLoading(false);
-    //  }, 300);
-    //};
-    //fetchData();
+    const fetchData = async () => {
+      const data = await fetch("http://localhost:8000/get_email", { method: "GET" });
+      const json = await data.json();
 
-    // Temporary data because the function above doesn't work on my machine 🪄
-    setMails([{ id: 1, subject: "Hello world", additionalInfo: "Something" }]);
-    setTimeout(() => { setLoading(false); }, 1000);
+      // Assign a random image to each mail when the data is fetched
+      const mailsWithIcons = json.map(mail => ({
+        ...mail,
+        icon: getRandomImage() // Assign a random icon to each mail
+      }));
+
+      setMails(mailsWithIcons);
+      setTimeout(() => {
+        setLoading(false);
+      }, 300);
+    };
+    fetchData();
+
+    // Temporary data in case the function above doesn't work on your machine 🪄
+    // const tempMails = [{ id: 1, subject: "Hello world", sender: "Sender" }];
+    // const mailsWithIcons = tempMails.map(mail => ({
+    //   ...mail,
+    //   icon: getRandomImage()
+    // }));
+    // setMails(mailsWithIcons);
+    // setTimeout(() => { setLoading(false); }, 1000);
+
   }, []);
 
   if (loading) {
@@ -56,12 +81,15 @@ function Mail({
       onMouseEnter={() => setHoveredMailId(mail.id)} // Set hovered mail id on mouse enter
       onMouseLeave={() => setHoveredMailId(null)} // Reset hovered mail id on mouse leave
     >
-      <div className="MailRowIcon"><img src="images/MailRowUrgentIcon.png" /></div>
+      {/* Use the assigned random icon */}
+      <div className="MailRowIcon">
+        <img src={mail.icon} alt="Mail Row Icon" />
+      </div>
       <div className="MailRowContent">
         {mail.subject}
         {/* Show additional information on hover */}
         {hoveredMailId === mail.id && (
-          <div className="AdditionalInfo">{mail.sender}</div> // Ensure 'additionalInfo' exists in your data
+          <div className="AdditionalInfo">{mail.sender}</div>
         )}
       </div>
     </div>
@@ -83,7 +111,7 @@ function Mail({
         { renderMails() }
       </div>
     </div>
-  )
+  );
 }
 
 export default Mail;
