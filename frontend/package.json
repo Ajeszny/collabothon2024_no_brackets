@@ -9,6 +9,7 @@
     "react": "^18.3.1",
     "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.3.1",
+    "react-draggable": "^4.4.6",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.14.1",
     "recharts": "^2.13.0",

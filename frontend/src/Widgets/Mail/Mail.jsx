@@ -16,19 +16,19 @@ function Mail({
 
   useEffect(() => {
     setLoading(true);
-    const fetchData = async () => {
-      const data = await fetch("http://localhost:8000/get_email", { method: "GET" });
-      const json = await data.json();
-      setMails(json);
-      setTimeout(() => {
-        setLoading(false);
-      }, 300);
-    };
-    fetchData();
+    //const fetchData = async () => {
+    //  const data = await fetch("http://localhost:8000/get_email", { method: "GET" });
+    //  const json = await data.json();
+    //  setMails(json);
+    //  setTimeout(() => {
+    //    setLoading(false);
+    //  }, 300);
+    //};
+    //fetchData();
 
     // Temporary data because the function above doesn't work on my machine 🪄
-    //setMails([{ id: 1, subject: "Hello world", additionalInfo: "Something" }]);
-    //setTimeout(() => { setLoading(false); }, 1000);
+    setMails([{ id: 1, subject: "Hello world", additionalInfo: "Something" }]);
+    setTimeout(() => { setLoading(false); }, 1000);
   }, []);
 
   if (loading) {
