@@ -26,6 +26,7 @@ function WidgetsContainer({
   const [InvestmentPropositionsPosition, setInvestmentPropositionsPosition] = useState({ x: 0, y: 0 });
   const [CurrencyConverterPosition, setCurrencyConverterPosition] = useState({ x: 0, y: 0 });
   const [FinancialOverviewPosition, setFinancialOverviewPosition] = useState({ x: 0, y: 0 });
+  const [StockRecommendationsPosition, setStockRecommendationsPosition] = useState({ x: 0, y: 0 });
 
   const handleDrag = (e, data, setPosition) => {
     const newX = Math.round(data.x / GRID_SIZE) * GRID_SIZE;
@@ -120,8 +121,8 @@ function WidgetsContainer({
         </div>
       </Draggable>
       <Draggable
-        position={MailPosition}
-        onStop={(e, data) => handleDrag(e, data, setMailPosition)}
+        position={StockRecommendationsPosition}
+        onStop={(e, data) => handleDrag(e, data, setStockRecommendationsPosition)}
         grid={[GRID_SIZE, GRID_SIZE]}
       >
         <div className="tile">

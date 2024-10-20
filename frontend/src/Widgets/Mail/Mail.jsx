@@ -42,7 +42,13 @@ function Mail({
           <img className="HeaderIcon" src="images/MailIcon.png" />
           <p className="HeaderTitle">Mail</p>
         </div>
-        <div className="MailContent">
+        <div className="MailContent"
+        style={{  
+        "align-items": "center",
+        "justify-content": "center",
+        "text-align": "center",
+        }}
+        >
           <BeatLoader color={"#FED601"} />
         </div>
       </div>

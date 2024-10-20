@@ -5,14 +5,14 @@ import React, { useState } from 'react';
 function Main() {
   const [MailIsHidden, setMailIsHidden] = useState(false);
   const [MailWasPressed, setMailWasPressed] = useState(false);
-  const [TransactionsIsHidden, setTransactionsIsHidden] = useState(false);
-  const [TransactionsWasPressed, setTransactionsWasPressed] = useState(false);
-  const [FinancialOverviewIsHidden, setFinancialOverviewIsHidden] = useState(false);
-  const [FinancialOverviewWasPressed, setFinancialOverviewWasPressed] = useState(false);
-  const [TasksIsHidden, setTasksIsHidden] = useState(false);
-  const [TasksWasPressed, setTasksWasPressed] = useState(false);
-  const [InvestmentPropositionsIsHidden, setInvestmentPropositionsIsHidden] = useState(false);
-  const [InvestmentPropositionsWasPressed, setInvestmentPropositionsWasPressed] = useState(false);
+  const [TransactionsIsHidden, setTransactionsIsHidden] = useState(true);
+  const [TransactionsWasPressed, setTransactionsWasPressed] = useState(true);
+  const [FinancialOverviewIsHidden, setFinancialOverviewIsHidden] = useState(true);
+  const [FinancialOverviewWasPressed, setFinancialOverviewWasPressed] = useState(true);
+  const [TasksIsHidden, setTasksIsHidden] = useState(true);
+  const [TasksWasPressed, setTasksWasPressed] = useState(true);
+  const [InvestmentPropositionsIsHidden, setInvestmentPropositionsIsHidden] = useState(true);
+  const [InvestmentPropositionsWasPressed, setInvestmentPropositionsWasPressed] = useState(true);
   const [CurrencyConverterIsHidden, setCurrencyConverterIsHidden] = useState(false);
   const [CurrencyConverterWasPressed, setCurrencyConverterWasPressed] = useState(false);
   const [StockRecommendationsIsHidden, setStockRecommendationsIsHidden] = useState(false);
@@ -79,6 +79,7 @@ function Main() {
           TasksSettings={TasksSettings}
           InvestmentPropositionsSettings={InvestmentPropositionsSettings}
           CurrencyConverterSettings={CurrencyConverterSettings}
+          StockRecommendationsSettings={StockRecommendationsSettings}
         />
         <WidgetsContainer 
           MailSettings={MailSettings}
