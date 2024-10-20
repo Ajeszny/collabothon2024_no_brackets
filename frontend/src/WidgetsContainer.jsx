@@ -6,6 +6,7 @@ import Transactions from './Widgets/Transactions/Transactions';
 import Tasks from './Widgets/Tasks/Tasks';
 import InvestmentPropositions from './Widgets/InvestmentPropositions/InvestmentPropositions';
 import CurrencyConverter from './Widgets/CurrencyConverter/CurrencyConverter';
+import StockRecommendations from './Widgets/StockRecommendations/StockRecommendations'
 
 
 const GRID_SIZE = 1; 
@@ -110,6 +111,20 @@ function WidgetsContainer({
       >
         <div className="tile">
           <Mail 
+          isHidden={MailSettings.isHidden}
+          setIsHidden={MailSettings.setIsHidden}
+          wasPressed={MailSettings.wasPressed}
+          setWasPressed={MailSettings.setWasPressed}
+          />
+        </div>
+      </Draggable>
+      <Draggable
+        position={MailPosition}
+        onStop={(e, data) => handleDrag(e, data, setMailPosition)}
+        grid={[GRID_SIZE, GRID_SIZE]}
+      >
+        <div className="tile">
+          <StockRecommendations 
           isHidden={MailSettings.isHidden}
           setIsHidden={MailSettings.setIsHidden}
           wasPressed={MailSettings.wasPressed}
