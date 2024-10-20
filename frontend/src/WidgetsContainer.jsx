@@ -18,6 +18,7 @@ function WidgetsContainer({
   TasksSettings,
   InvestmentPropositionsSettings,
   CurrencyConverterSettings,
+  StockRecommendationsSettings,
 }) {
   const [TransactionsPosition, setTransactionsPosition] = useState({ x: 0, y: 0 });
   const [MailPosition, setMailPosition] = useState({ x: 0, y: 0 });
@@ -125,10 +126,10 @@ function WidgetsContainer({
       >
         <div className="tile">
           <StockRecommendations 
-          isHidden={MailSettings.isHidden}
-          setIsHidden={MailSettings.setIsHidden}
-          wasPressed={MailSettings.wasPressed}
-          setWasPressed={MailSettings.setWasPressed}
+          isHidden={StockRecommendationsSettings.isHidden}
+          setIsHidden={StockRecommendationsSettings.setIsHidden}
+          wasPressed={StockRecommendationsSettings.wasPressed}
+          setWasPressed={StockRecommendationsSettings.setWasPressed}
           />
         </div>
       </Draggable>

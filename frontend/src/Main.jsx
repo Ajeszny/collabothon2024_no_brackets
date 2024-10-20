@@ -15,7 +15,8 @@ function Main() {
   const [InvestmentPropositionsWasPressed, setInvestmentPropositionsWasPressed] = useState(false);
   const [CurrencyConverterIsHidden, setCurrencyConverterIsHidden] = useState(false);
   const [CurrencyConverterWasPressed, setCurrencyConverterWasPressed] = useState(false);
-  
+  const [StockRecommendationsIsHidden, setStockRecommendationsIsHidden] = useState(false);
+  const [StockRecommendationsWasPressed, setStockRecommendationsWasPressed] = useState(false);
 
   const MailSettings = {
     isHidden: MailIsHidden,
@@ -60,6 +61,13 @@ function Main() {
     setWasPressed: setCurrencyConverterWasPressed,
   };
 
+  const StockRecommendationsSettings = {
+    isHidden: StockRecommendationsIsHidden,
+    setIsHidden: setStockRecommendationsIsHidden,
+    wasPressed: StockRecommendationsWasPressed,
+    setWasPressed: setStockRecommendationsWasPressed,
+  };
+
   return (
     <div className="Main">
       <div className="Greeting">Hello, User!</div>
@@ -79,7 +87,7 @@ function Main() {
           TasksSettings={TasksSettings}
           InvestmentPropositionsSettings={InvestmentPropositionsSettings}
           CurrencyConverterSettings={CurrencyConverterSettings}
-          
+          StockRecommendationsSettings={StockRecommendationsSettings}
         />
       </div>
     </div>
