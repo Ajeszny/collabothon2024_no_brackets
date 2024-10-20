@@ -75,8 +75,8 @@ def create_synthetic_card_data(n_cards=5, n_transactions=20):
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
 def get_email_info():
   creds = None
-  if os.path.exists("D:\\Fuck Jetbrains\\Python\\collabothon2024_no_brackets\\backend\\cockpit\\token.json"):
-    creds = Credentials.from_authorized_user_file("D:\\Fuck Jetbrains\\Python\\collabothon2024_no_brackets\\backend\cockpit\\token.json", SCOPES)
+  if os.path.exists("token.json"):
+    creds = Credentials.from_authorized_user_file("token.json", SCOPES)
   if not creds or not creds.valid:
     if creds and creds.expired and creds.refresh_token:
       creds.refresh(Request())

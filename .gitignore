@@ -27,3 +27,7 @@ media
 
 */.linux_venv/
 */.venv/
+
+backend/cockpit/commerzapi.py
+backend/credentials.json
+backend/token.json
