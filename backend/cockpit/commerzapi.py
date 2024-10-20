@@ -120,7 +120,7 @@ def get_email_info():
         if header['name'] == 'Subject':
           subject = header['value']
 
-      ssi.append({"subject": subject[:20] + '...', "sender": sender, "id": unread[i]['id'], "type": random.choice(tabla)})
+      ssi.append({"subject": subject[:15] + '...', "sender": sender, "id": unread[i]['id'], "type": random.choice(tabla)})
 
     return ssi
 
