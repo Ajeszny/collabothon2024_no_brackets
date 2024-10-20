@@ -45,9 +45,11 @@ def add_email(request):
 
 
 transactions = [{"description": "Hackathon", "account": "account: **** 1111",
-                 "amount": "-7590.0", "currency": "eur", "positive": False},
-                {"description": "sprzedaż wątroby kasie pietrzyk", "account": "account: **** 1111",
-                 "amount": "+7590.0", "currency": "eur", "positive": True}
+                 "amount": "-7590.0", "currency": "eur", "positive": False, "details": "Collabothon"},
+                {"description": "Sponsors", "account": "account: **** 1111",
+                 "amount": "+3000.0", "currency": "eur", "positive": True, "details": "For Hackathon"},
+                {"description": "Frankfurt Komputersystem GmbH", "account": "account: **** 1337",
+                 "amount": "+100000.0", "currency": "eur", "positive": True, "details": "Das Hinterlegung"}
                 ]
 
 
@@ -74,11 +76,15 @@ data = [
                 "balance": [{"currency": i, "amount": r.randint(0, 1000000)} for i in currencies]
             },
             {
-                "account": "Немецкое золото",
+                "account": "account: **** 1337",
                 "balance": [{"currency": i, "amount": r.randint(0, 1000000)} for i in currencies]
             },
             {
-                "account": "Valeriia Zlydar",
+                "account": "account: **** 1234",
+                "balance": [{"currency": i, "amount": r.randint(0, 1000000)} for i in currencies]
+            },
+{
+                "account": "Savings",
                 "balance": [{"currency": i, "amount": r.randint(0, 1000000)} for i in currencies]
             },
         ]
