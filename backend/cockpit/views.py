@@ -44,7 +44,7 @@ def add_email(request):
     return Response(status=status.HTTP_200_OK)
 
 
-transactions = [{"description": "kupno czegos tam", "account": "account: **** 1111",
+transactions = [{"description": "Hackathon", "account": "account: **** 1111",
                  "amount": "-7590.0", "currency": "eur", "positive": False},
                 {"description": "sprzedaż wątroby kasie pietrzyk", "account": "account: **** 1111",
                  "amount": "+7590.0", "currency": "eur", "positive": True}

@@ -61,7 +61,7 @@ function Mail({
         {mail.subject}
         {/* Show additional information on hover */}
         {hoveredMailId === mail.id && (
-          <div className="AdditionalInfo">{mail.additionalInfo}</div> // Ensure 'additionalInfo' exists in your data
+          <div className="AdditionalInfo">{mail.sender}</div> // Ensure 'additionalInfo' exists in your data
         )}
       </div>
     </div>
