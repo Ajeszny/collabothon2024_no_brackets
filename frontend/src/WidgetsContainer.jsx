@@ -20,13 +20,13 @@ function WidgetsContainer({
   CurrencyConverterSettings,
   StockRecommendationsSettings,
 }) {
-  const [TransactionsPosition, setTransactionsPosition] = useState({ x: 0, y: 0 });
-  const [MailPosition, setMailPosition] = useState({ x: 0, y: 0 });
-  const [TasksPosition, setTasksPosition] = useState({ x: 0, y: 0 });
-  const [InvestmentPropositionsPosition, setInvestmentPropositionsPosition] = useState({ x: 0, y: 0 });
+  const [TransactionsPosition, setTransactionsPosition] = useState({ x: 200, y: 190 });
+  const [MailPosition, setMailPosition] = useState({ x: 560, y: 200 });
+  const [TasksPosition, setTasksPosition] = useState({ x: 1100, y: -230 });
+  const [InvestmentPropositionsPosition, setInvestmentPropositionsPosition] = useState({ x: 1500, y: -230 });
   const [CurrencyConverterPosition, setCurrencyConverterPosition] = useState({ x: 0, y: 0 });
-  const [FinancialOverviewPosition, setFinancialOverviewPosition] = useState({ x: 0, y: 0 });
-  const [StockRecommendationsPosition, setStockRecommendationsPosition] = useState({ x: 0, y: 0 });
+  const [FinancialOverviewPosition, setFinancialOverviewPosition] = useState({ x: 200, y: -200 });
+  const [StockRecommendationsPosition, setStockRecommendationsPosition] = useState({ x: 1100, y: 165 });
 
   const handleDrag = (e, data, setPosition) => {
     const newX = Math.round(data.x / GRID_SIZE) * GRID_SIZE;
