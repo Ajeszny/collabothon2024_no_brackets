@@ -10,7 +10,10 @@ function DropDown({ selectedCurrency, setSelectedCurrency, handleFetch }) {
 
   return (
     <div className="DropDown">
-      <select value={selectedCurrency} onChange={handleChange} className="DropDownMenu">
+      <select value={selectedCurrency} onChange={handleChange} className="DropDownMenu"
+      onMouseDown={(e) => e.stopPropagation()} 
+      onClick={(e) => e.stopPropagation()}
+      >
         {currencies.map((currency, index) => (
           <option key={index} value={currency}>
             {currency}

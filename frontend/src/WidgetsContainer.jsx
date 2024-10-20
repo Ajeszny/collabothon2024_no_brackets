@@ -6,6 +6,7 @@ import Transactions from './Widgets/Transactions/Transactions';
 import Tasks from './Widgets/Tasks/Tasks';
 import InvestmentPropositions from './Widgets/InvestmentPropositions/InvestmentPropositions';
 import CurrencyConverter from './Widgets/CurrencyConverter/CurrencyConverter';
+import StockRecommendations from './Widgets/StockRecommendations/StockRecommendations'
 
 
 const GRID_SIZE = 1; 
@@ -17,6 +18,7 @@ function WidgetsContainer({
   TasksSettings,
   InvestmentPropositionsSettings,
   CurrencyConverterSettings,
+  StockRecommendationsSettings,
 }) {
   const [TransactionsPosition, setTransactionsPosition] = useState({ x: 0, y: 0 });
   const [MailPosition, setMailPosition] = useState({ x: 0, y: 0 });
@@ -24,6 +26,7 @@ function WidgetsContainer({
   const [InvestmentPropositionsPosition, setInvestmentPropositionsPosition] = useState({ x: 0, y: 0 });
   const [CurrencyConverterPosition, setCurrencyConverterPosition] = useState({ x: 0, y: 0 });
   const [FinancialOverviewPosition, setFinancialOverviewPosition] = useState({ x: 0, y: 0 });
+  const [StockRecommendationsPosition, setStockRecommendationsPosition] = useState({ x: 0, y: 0 });
 
   const handleDrag = (e, data, setPosition) => {
     const newX = Math.round(data.x / GRID_SIZE) * GRID_SIZE;
@@ -114,6 +117,20 @@ function WidgetsContainer({
           setIsHidden={MailSettings.setIsHidden}
           wasPressed={MailSettings.wasPressed}
           setWasPressed={MailSettings.setWasPressed}
+          />
+        </div>
+      </Draggable>
+      <Draggable
+        position={StockRecommendationsPosition}
+        onStop={(e, data) => handleDrag(e, data, setStockRecommendationsPosition)}
+        grid={[GRID_SIZE, GRID_SIZE]}
+      >
+        <div className="tile">
+          <StockRecommendations 
+          isHidden={StockRecommendationsSettings.isHidden}
+          setIsHidden={StockRecommendationsSettings.setIsHidden}
+          wasPressed={StockRecommendationsSettings.wasPressed}
+          setWasPressed={StockRecommendationsSettings.setWasPressed}
           />
         </div>
       </Draggable>
