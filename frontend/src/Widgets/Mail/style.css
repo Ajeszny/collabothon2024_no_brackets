@@ -39,7 +39,7 @@
 
 .MailRowContent {
   display: flex;
-  width: calc(100% - 8px);
+  width: calc(100% - 68px);
   border-bottom: 1px solid black;
   text-align: center;
 }
